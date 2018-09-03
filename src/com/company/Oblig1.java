@@ -11,12 +11,12 @@ public class Oblig1 {
         int[] a = {3, 10, 8, 5, 1, 9, 2, 4, 7, 6};
         int[] c =  {4, 3, 1, 5, 6, 10, 9, 7, 8, 2};
         int[] b = {};
-        int[] d = {3, 3, 4, 5, 5, 6, 7, 7, 7, 8};
+        int[] d = {3, 3, 4, 5, 5, 6, 7, 7, 7, 8, 2, 2, 1};
 
         System.out.println(Arrays.toString(d));
         //System.out.println("Maksverdien er: " + maks(c));
         //System.out.println("Ombyttinger er: " + ombyttinger(c));
-        System.out.println("Antall ulike: " + antallUlikeSortert(d));
+        System.out.println("Antall ulike: " + antallUlikeUsortert(d));
 
         System.out.println(Arrays.toString(d));
 
@@ -100,11 +100,21 @@ public class Oblig1 {
 
     // Oppgave 3
 
-    public static int antallUikeUsortert(int[] a){
+    public static int antallUlikeUsortert(int[] a){
 
-        for(int i = 0; i <a.length -1; i++){
-            if(a[i] > a[i+1]){
-                throw new IllegalStateException("Tabellen er ikke sortert stigende");
+        if(a.length < 1){
+            return 0;
+        }
+
+
+        for(int i = 0; i < a.length - 1; i++){
+            for(int k = 0; k < a.length; k++){
+
+                if(a[i] > a[i+1]){
+                    int temp = a[i];
+                    a[i] = a[i + 1];
+                    a[i + 1] = temp;
+                }
             }
         }
 
@@ -118,5 +128,8 @@ public class Oblig1 {
 
         return ulikeTall;
     }
+
+
+
 
 }
