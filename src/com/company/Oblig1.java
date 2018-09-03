@@ -98,6 +98,25 @@ public class Oblig1 {
         return ulikeTall;
     }
 
+    // Oppgave 3
 
+    public static int antallUikeUsortert(int[] a){
+
+        for(int i = 0; i <a.length -1; i++){
+            if(a[i] > a[i+1]){
+                throw new IllegalStateException("Tabellen er ikke sortert stigende");
+            }
+        }
+
+
+        int ulikeTall = 1;
+        for(int j = 0; j < a.length - 1; j++){
+            if(a[j] != a[j+1]){
+                ulikeTall++;
+            }
+        }
+
+        return ulikeTall;
+    }
 
 }
