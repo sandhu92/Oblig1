@@ -45,4 +45,30 @@ public class Oblig1 {
     }
 
 
+    // Oppgave 1 - part 2
+
+    public static int ombyttinger(int[] a){
+
+        if(a.length < 1){
+            throw new NoSuchElementException("Tabellen er tom!");
+        }
+
+        int ombyttinger = 0;
+
+        for(int i = 0; i < a.length - 1; i++){
+
+            if(a[i] > a[i+1]){
+
+                int maksverdi = a[i];
+                a[i] = a[i+1];
+                a[i+1] = maksverdi;
+                ombyttinger++;
+            }
+
+        }
+
+        return ombyttinger;
+    }
+
+
 }
